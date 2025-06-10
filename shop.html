@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeshAayu - Shop Our Organic Hair Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-green: #a9b05e;
+            --dark-green: #8d944d;
+            --background-light: #f9f9f7;
+            --text-dark: #3a3a3a;
+            --text-light: #7a7a7a;
+            --card-bg: #ffffff;
+            --border-light: #e0e0e0;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 4rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.2rem; }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        /* --- Header --- */
+        .header {
+            padding: 20px 0;
+            background-color: var(--background-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1;
+        }
+
+        .logo span {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            color: var(--text-light);
+            display: block;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .hamburger-btn .line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .close-btn {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1002;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+        
+        /* --- NEW: Shop Page Specific Styles --- */
+        .shop-hero {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: #f1f1e9;
+        }
+        
+        .shop-hero h1 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .shop-hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .shop-grid-section {
+            padding: 4rem 0;
+        }
+        
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .product-item-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-item-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+        }
+        
+        .product-item-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .product-item-card:hover .product-item-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-item-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Allows content to fill space */
+        }
+        
+        .product-item-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-item-content .tag {
+            font-size: 0.8rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .product-item-content p {
+            font-size: 0.95rem;
+            flex-grow: 1; /* Pushes price and buttons down */
+        }
+        
+        .product-price {
+            font-size: 1.6rem;
+            font-family: var(--font-heading);
+            color: var(--dark-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        .product-actions .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 0.95rem;
+        }
+        
+
+        /* --- Enhanced Footer Section --- */
+        .footer {
+            padding: 4rem 0 2rem;
+            background-color: var(--dark-green);
+            color: white; /* Changed from #white for correctness */
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-logo-col {
+            grid-column: span 1;
+        }
+        
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: white;
+            display: block;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a {
+            color: white;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+            display: block;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary-green); /* Corrected for better visibility */
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            min-width: 20px;
+            padding-top: 4px; /* Align icon with text */
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        .copyright p { 
+            color: rgba(255, 255, 255, 0.8); /* Corrected color property */
+            margin: 0;
+        }
+        
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(249, 249, 247, 0.98);
+                backdrop-filter: blur(5px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-menu ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            .nav-menu ul a {
+                font-size: 1.5rem;
+            }
+
+            .header-actions .btn-secondary {
+                display: none; /* Hides the original 'Prepare Review' button on mobile */
+            }
+
+            .hamburger-btn {
+                display: block; 
+            }
+            
+            .close-btn {
+                display: block;
+            }
+
+            .hamburger-btn.active .line:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger-btn.active .line:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-btn.active .line:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+           .shop-container {
+                grid-template-columns: 1fr;
+           }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                KeshAayu
+                <span>Organic Hair Solution</span>
+            </a>
+            <nav class="nav-menu">
+                <button class="close-btn" aria-label="Close menu">×</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contributions.html">Contributions </a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-secondary">Prepare Review</a>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="shop-hero">
+            <div class="container">
+                <h1>Our Collection</h1>
+                <p>Explore our curated selection of Ayurvedic hair serums and oils, meticulously crafted to bring out the natural best in your hair.</p>
+            </div>
+        </section>
+
+        <section class="shop-grid-section">
+            <div class="container shop-container">
+                
+                <div class="product-item-card">
+                    <div class="product-item-image">
+                        <img src="images/p1.png" alt="Herbal Nourishing Oil Bottle">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Kesh Aayu Elixir Oil - 30ml</h3>
+                        <span class="tag">Low Porosity Hair</span>
+                        <p>Our signature oil, infused with Bhringraj and Amla, to reduce hair fall and promote deep root strength.</p>
+                        <div class="product-price">Rs 199</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-secondary">Add to Cart</a>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item-card">
+                    <div class="product-item-image">
+                        <img src="images/p2.png" alt="Revitalizing Scalp Serum Bottle">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Kesh Aayu Elixir Oil- 30ml</h3>
+                        <span class="tag">High Porosity Hair</span>
+                        <p>A lightweight, non-greasy oil with Rosemary and Tea Tree to soothe irritation and balance scalp health.</p>
+                        <div class="product-price">Rs 199</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-secondary">Add to Cart</a>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item-card">
+                    <div class="product-item-image">
+                        <img src="images/p3.png" alt="Shine & Smooth Hair Oil Bottle">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Kesh Aayu Elixir Oil- 45ml</h3>
+                        <span class="tag">Low Porosity Hair</span>
+                        <p>Our signature oil, infused with Bhringraj and Amla, to reduce hair fall and promote deep root strength.</p>
+                        <div class="product-price">Rs 249</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-secondary">Add to Cart</a>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item-card">
+                    <div class="product-item-image">
+                        <img src="images/p4.png" alt="Growth Boost Serum bottle">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Kesh Aayu Elixir Oil- 45ml</h3>
+                        <span class="tag">High Porosity Hair</span>
+                        <p>A lightweight, non-greasy oil with Rosemary and Tea Tree to soothe irritation and balance scalp health.</p>
+                        <div class="product-price">Rs 249</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-secondary">Add to Cart</a>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="product-item-card">
+                    <div class="product-item-image">
+                        <img src="images/p5.png" alt="Keshaayu Magic Mist">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Keshaayu Magic Mist- 30ml</h3>
+                        <span class="tag">Low Porosity Hair</span>
+                        <p>Infused with Rose and Aloe Vera, this refreshing mist detangles, hydrates, and adds a natural fragrance to your hair.</p>
+                        <div class="product-price">Rs 299</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-secondary">Add to Cart</a>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="product-item-card">
+                    <div class="product-item-image">
+                        <img src="images/p6.png" alt="Low Porosity Elixir Oil">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Kesh Aayu Magic Mist- 30ml </h3>
+                        <span class="tag">High Porosity Hair</span>
+                        <p>A lightweight formula with Grapeseed and Jojoba oils that easily penetrates low porosity hair without buildup.</p>
+                        <div class="product-price">Rs 299</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-secondary">Add to Cart</a>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col footer-logo-col">
+                    <div class="footer-logo">
+                        KeshAayu
+                        <span>Organic Hair Solution</span>
+                    </div>
+                    <p style="color: white;">Nourishing your hair with nature's finest ingredients since 2022. Our Ayurvedic formulations bring vitality and strength to every strand.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Products</a></li>
+                        <li><a href="#">Ayurvedic Science</a></li>
+                        <li><a href="#">Hair Care Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Products</h4>
+                    <ul>
+                        <li><a href="#">Keshaayu Organic Elixir Oil - High Porosity</a></li>
+                        <li><a href="#">Keshaayu Organic Elixir Oil - Low Porosity</a></li>
+                        <li><a href="#">Keshaayu Magic Mist </a></li>
+                        <li><a href="#">Ayurvedic Hair Mask</a></li>
+                        <li><a href="#">Natural Hair Mist</a></li>
+                        <li><a href="#">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Putalisadak, Kathmandu, Nepal</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span>+977 9702046179</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span>care@keshaayu.com</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9am - 6pm</span>
+                        </p>
+                    </div>
+                    
+                 
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 KeshAayu. All rights reserved. </p>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header navigation toggle
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeBtn = document.querySelector('.close-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            function toggleMenu() {
+                const isActive = navMenu.classList.toggle('active');
+                hamburgerBtn.classList.toggle('active', isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            }
+
+            hamburgerBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking on links
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

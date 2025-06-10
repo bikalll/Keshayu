@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeshAayu - Our Contributions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-green: #a9b05e;
+            --dark-green: #8d944d;
+            --background-light: #f9f9f7;
+            --text-dark: #3a3a3a;
+            --text-light: #7a7a7a;
+            --card-bg: #ffffff;
+            --border-light: #e0e0e0;
+            --accent-pink: #d89ca4;
+            --accent-purple: #9a8c98;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 1.8rem); }
+        h4 { font-size: clamp(1.1rem, 2vw, 1.2rem); }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        /* --- Header --- */
+        .header {
+            padding: 20px 0;
+            background-color: var(--background-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1;
+        }
+
+        .logo span {
+            font-family: var(--font-body);
+            font-size: clamp(0.6rem, 1vw, 0.7rem);
+            color: var(--text-light);
+            display: block;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .hamburger-btn .line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .close-btn {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1002;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+        
+        /* --- Hero Section --- */
+        .hero-section {
+            background: linear-gradient(rgba(169, 176, 94, 0.85), rgba(141, 148, 77, 0.85)), 
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: clamp(4rem, 8vw, 8rem) 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .hero-content p {
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem); /* Font size reduced */
+            color: white;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1.5rem, 3vw, 3rem);
+            margin-top: clamp(2rem, 4vw, 3rem);
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .stat-value {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: clamp(0.85rem, 1.2vw, 1rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* --- Contributions Section --- */
+        .contributions-section {
+            padding: clamp(3rem, 5vw, 5rem) 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vw, 4rem);
+        }
+
+        .section-intro h2 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-intro .subtitle {
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem); /* Font size reduced */
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto clamp(1rem, 2vw, 1.5rem);
+        }
+        
+        .section-intro .line-decorator {
+            width: 80px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 0 auto;
+        }
+        
+        /* --- Program Cards --- */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: clamp(1.5rem, 2.5vw, 2.5rem);
+            margin: clamp(2rem, 4vw, 4rem) 0;
+        }
+        
+        .program-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(141, 148, 77, 0.2);
+        }
+        
+        .program-image {
+            height: clamp(200px, 30vw, 250px);
+            overflow: hidden;
+        }
+        
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+        
+        .program-content {
+            padding: clamp(1.5rem, 2vw, 2rem);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .program-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .program-content p {
+            flex-grow: 1;
+        }
+        
+        /* --- Impact Section --- */
+        .impact-section {
+            background-color: #f1f1e9;
+            padding: clamp(3rem, 5vw, 5rem) 0;
+            border-radius: 20px;
+        }
+        
+        .impact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: clamp(1.5rem, 3vw, 3rem);
+            align-items: center;
+        }
+        
+        .impact-image {
+            flex: 1;
+            min-width: min(300px, 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .impact-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .impact-content {
+            flex: 1;
+            min-width: min(300px, 100%);
+        }
+        
+        .impact-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-points {
+            margin-top: 2rem;
+        }
+        
+        .impact-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .point-icon {
+            background-color: var(--accent-pink);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* --- Testimonials --- */
+        .testimonials-section {
+            padding: clamp(3rem, 5vw, 5rem) 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: clamp(1.5rem, 2.5vw, 2.5rem);
+            margin-top: clamp(2rem, 3vw, 3rem);
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: clamp(1.5rem, 2vw, 2rem);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .testimonial-card::before {
+            content: "\201C";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            font-family: var(--font-heading);
+            color: var(--primary-green);
+            opacity: 0.2;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1rem; /* Reduced font size for author name */
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            margin: 0;
+        }
+        
+        /* --- Call to Action --- */
+        .cta-section {
+            background: linear-gradient(rgba(169, 176, 94, 0.9), rgba(141, 148, 77, 0.9)), 
+                        url('https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: clamp(3rem, 5vw, 5rem) 0;
+            border-radius: 20px;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-size: clamp(0.9rem, 1.5vw, 1rem); /* Font size reduced */
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* --- Enhanced Footer Section --- */
+        .footer {
+            padding: clamp(2rem, 4vw, 4rem) 0 clamp(1rem, 2vw, 2rem);
+            background-color: var(--dark-green);
+            color: white;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(1rem, 2vw, 2rem);
+        }
+        
+        .footer-logo-col { grid-column: span 1; }
+        .footer-col { display: flex; flex-direction: column; }
+        
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 2.5vw, 2rem);
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            font-family: var(--font-body);
+            font-size: clamp(0.7rem, 1vw, 0.8rem);
+            color: white;
+            display: block;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-green);
+        }
+        
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.8rem; }
+        
+        .footer-col ul li a {
+            color: white;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+            display: block;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary-green);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            min-width: 20px;
+            padding-top: 4px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.75rem; /* Font size reduced */
+        }
+        
+        .copyright p { 
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: clamp(2.5rem, 4.5vw, 3rem);
+            }
+            
+            .programs-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background-color: rgba(249, 249, 247, 0.98);
+                backdrop-filter: blur(5px);
+                flex-direction: column; justify-content: center; align-items: center;
+                z-index: 1000;
+                opacity: 0; visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            
+            .nav-menu.active { display: flex; opacity: 1; visibility: visible; }
+            .nav-menu ul { flex-direction: column; text-align: center; gap: 2rem; }
+            .nav-menu ul a { font-size: 1.5rem; }
+            .header-actions .btn-secondary { display: none; }
+            .hamburger-btn, .close-btn { display: block; }
+            .hamburger-btn.active .line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger-btn.active .line:nth-child(2) { opacity: 0; }
+            .hamburger-btn.active .line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+            .footer-container { grid-template-columns: repeat(2, 1fr); }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                margin: 5px 0;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+            
+            .footer-container { grid-template-columns: 1fr; }
+            
+            .impact-container {
+                flex-direction: column;
+            }
+            
+            .impact-image, .impact-content {
+                min-width: 100%;
+            }
+            
+            .section-intro .subtitle {
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-col ul li a {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .programs-grid {
+                grid-template-columns: repeat(3, minmax(350px, 1fr));
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: repeat(3, minmax(350px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                KeshAayu
+                <span>Organic Hair Solution</span>
+            </a>
+            <nav class="nav-menu">
+                <button class="close-btn" aria-label="Close menu">×</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="contributions.html" class="active">Contributions</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-secondary">Prepare Review</a>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle menu">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Empowering Women Through Ayurveda</h1>
+                    <p>At KeshAayu, we believe beauty and empowerment go hand-in-hand. That's why we dedicate 10% of our profits to women empowerment initiatives across Nepal.</p>
+                    <a href="#" class="btn btn-primary">Shop with Purpose</a>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">10%</div>
+                            <div class="stat-label">Profits Donated</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">90%</div>
+                            <div class="stat-label">Women Employees</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">250+</div>
+                            <div class="stat-label">Single Mothers Supported</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="contributions-section">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Our Social Commitment</h2>
+                    <p class="subtitle">KeshAayu is built on principles of empowerment, sustainability, and community support. Discover how we're making a difference.</p>
+                    <div class="line-decorator"></div>
+                </div>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" alt="Women entrepreneurs">
+                        </div>
+                        <div class="program-content">
+                            <h3>Entrepreneurship Training</h3>
+                            <p>We provide business training and seed funding to help women start their own enterprises. Our program has launched 50+ small businesses in the past two years.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Education for girls">
+                        </div>
+                        <div class="program-content">
+                            <h3>Girls' Education Fund</h3>
+                            <p>We sponsor education for over 200 girls annually, providing tuition, supplies, and mentorship to help them break the cycle of poverty.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Skill development">
+                        </div>
+                        <div class="program-content">
+                            <h3>Skill Development</h3>
+                            <p>We offer vocational training in traditional crafts, organic farming, and beauty services to provide women with sustainable income opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="impact-section">
+                    <div class="container">
+                        <div class="impact-container">
+                            <div class="impact-image">
+                                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="KeshAayu women employees">
+                            </div>
+                            <div class="impact-content">
+                                <h2>Our Women-Led Workforce</h2>
+                                <p>At KeshAayu, we're proud that 90% of our team are talented women who bring passion and expertise to every aspect of our business.</p>
+                                
+                                <div class="impact-points">
+                                    <div class="impact-point">
+                                        <div class="point-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <div>
+                                            <h3>Support for Single Mothers</h3>
+                                            <p>We provide flexible schedules, childcare support, and specialized benefits to help single mothers thrive in their careers.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="impact-point">
+                                        <div class="point-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <div>
+                                            <h3>Career Development</h3>
+                                            <p>Through training and mentorship programs, we empower our female employees to advance into leadership positions.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="impact-point">
+                                        <div class="point-icon">
+                                            <i class="fas fa-seedling"></i>
+                                        </div>
+                                        <div>
+                                            <h3>Sustainable Livelihoods</h3>
+                                            <p>We partner with women farmers and herb collectors, providing fair prices and sustainable harvesting training.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-section">
+                    <div class="section-intro">
+                        <h2>Stories of Impact</h2>
+                        <p class="subtitle">Hear from the women whose lives have been transformed through KeshAayu's initiatives.</p>
+                        <div class="line-decorator"></div>
+                    </div>
+                    
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The entrepreneurship program gave me the skills and confidence to start my own spice business. I can now support my family and send my children to school."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="images/model4.jpg" alt="Sunita">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sunita Rai</h4>
+                                    <p>Entrepreneurship Program Graduate</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"As a single mother working at KeshAayu, the childcare support has been life-changing. I can focus on my work knowing my children are safe and well-cared for."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="images/model5.jpeg" alt="Priya">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Priya Thapa</h4>
+                                    <p>Production Team Member</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Thanks to the Girls' Education Fund, I'm the first in my family to attend university. I'm studying botany and hope to join the KeshAayu research team one day."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="images/model6.JPG" alt="Anjali">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Anjali Gurung</h4>
+                                    <p>Education Fund Recipient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <div class="container">
+                        <div class="cta-content">
+                            <h2>Join Us in Making a Difference</h2>
+                            <p>Every purchase you make contributes to our women empowerment initiatives. Choose KeshAayu for beautiful hair and a beautiful impact.</p>
+                            <div class="cta-buttons">
+                                <a href="shop.html" class="btn btn-primary">Shop Our Products</a>
+                                <a href="#" class="btn btn-secondary">Be a part of change</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col footer-logo-col">
+                    <div class="footer-logo">
+                        KeshAayu
+                        <span>Organic Hair Solution</span>
+                    </div>
+                    <p style="color: white;">Nourishing your hair with nature's finest ingredients since 2022. Our Ayurvedic formulations bring vitality and strength to every strand.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Products</a></li>
+                        <li><a href="#">Ayurvedic Science</a></li>
+                        <li><a href="#">Hair Care Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Products</h4>
+                    <ul>
+                        <li><a href="#">Keshaayu Organic Elixir Oil - High Porosity</a></li>
+                        <li><a href="#">Keshaayu Organic Elixir Oil - Low Porosity</a></li>
+                        <li><a href="#">Keshaayu Magic Mist </a></li>
+                        <li><a href="#">Ayurvedic Hair Mask</a></li>
+                        <li><a href="#">Natural Hair Mist</a></li>
+                        <li><a href="#">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i><span>Putalisadak, Kathmandu, Nepal</span></p>
+                        <p><i class="fas fa-phone"></i><span>+977 9702046179</span></p>
+                        <p><i class="fas fa-envelope"></i><span>care@keshaayu.com</span></p>
+                        <p><i class="fas fa-clock"></i><span>Mon-Sat: 9am - 6pm</span></p>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p style="font-size: 1.3vh;">© 2025 KeshAayu. All rights reserved. </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header navigation toggle
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeBtn = document.querySelector('.close-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            function toggleMenu() {
+                const isActive = navMenu.classList.toggle('active');
+                hamburgerBtn.classList.toggle('active', isActive);
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            }
+
+            hamburgerBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking on links
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
